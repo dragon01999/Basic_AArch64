@@ -6,22 +6,22 @@ bg_len = . - bg
 .section .text
 .global _start
 _start:
-        MOV     X6, #0
-        MOV     X3, #0x9
+        mov     x6, #0
+        mov     x3, #0x9
         print_:
-		MOV X8, #64
-                MOV X0, #1
-                LDR X1, =bg
-                MOV X2, #bg_len
-                SVC #0
-                MOV X8, #64
-                MOV X0, #1
-                LDR X1, =str
-		MOV X2, #str_len
-		SVC #0
-                ADD X6, X6, #1
-        CMP     X6, X3
-        BLT print_
-        MOV X8, #93
-        SVC #0
+		mov x8, #64
+                mov x0, #1
+                ldr x1, =bg
+                mov x2, #bg_len
+                svc #0
+                mov x8, #64
+                mov x0, #1
+                ldr x1, =str
+		mov x2, #str_len
+		svc #0
+                add x6, x6, #1
+        cmp     x6, x3
+        blt print_
+        mov x8, #93
+        svc #0
 
